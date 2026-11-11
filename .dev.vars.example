@@ -1,0 +1,4 @@
+# Optional: enables AI classification suggestions. Never commit a real API key.
+DEEPSEEK_API_KEY=your_api_key_here
+# Optional: enables Feishu delivery. Leave empty to keep delivery disabled.
+FEISHU_WEBHOOK_URL=

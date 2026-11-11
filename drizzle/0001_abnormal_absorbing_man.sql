@@ -1,0 +1,1 @@
+ALTER TABLE `saved_items` ADD `category_source` text DEFAULT 'user' NOT NULL;

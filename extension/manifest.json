@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "「不怕吃灰」收藏夹",
+  "version": "0.1.1",
+  "description": "「不怕吃灰」收藏夹的浏览器同步扩展，将已登录平台的收藏同步到本机。",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "https://*.xiaohongshu.com/*",
+    "https://*.bilibili.com/*",
+    "https://*.zhihu.com/*",
+    "https://weibo.com/*",
+    "https://*.weibo.com/*"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "https://*.xiaohongshu.com/*",
+      "https://*.bilibili.com/*",
+      "https://*.zhihu.com/*",
+      "https://weibo.com/*",
+      "https://*.weibo.com/*"
+    ],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }, {
+    "matches": ["http://127.0.0.1/*"],
+    "js": ["backend-bridge.js"],
+    "run_at": "document_idle"
+  }],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "同步到「不怕吃灰」收藏夹" }
+}
